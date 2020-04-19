@@ -9,3 +9,6 @@ Source:
 
 https://docs.google.com/spreadsheets/d/14TWw0lf2x6y8ji5Zd7zv9sIIVixU33irCM-i9CIrmo4/edit#gid=0
 
+The script is run daily resulting in below list:
+
+https://dehakkelaar.nl/lists/cryptojacking_campaign.list.txt
