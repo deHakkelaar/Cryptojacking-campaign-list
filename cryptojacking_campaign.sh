@@ -16,11 +16,11 @@ listfile="/web/lists/cryptojacking_campaign.list.txt"
 #
 # Pull in the lists from individual sheets and write to tmp location.
 #
-curl -s -k $rooturl$documentid$exportcsv$sheetid01 | awk -F , '{print $1}' | awk -F : '{print $1}' | tail -n +2 | tee $listfile.tmp
-curl -s -k $rooturl$documentid$exportcsv$sheetid02 | awk -F , '{print $1}' | awk -F : '{print $1}' | tail -n +2 | tee -a $listfile.tmp
-curl -s -k $rooturl$documentid$exportcsv$sheetid03 | awk -F , '{print $1}' | tail -n +2 | tee -a $listfile.tmp
-curl -s -k $rooturl$documentid$exportcsv$sheetid04 | awk -F , '{print $1}' | tail -n +2 | tee -a $listfile.tmp
-curl -s -k $rooturl$documentid$exportcsv$sheetid05 | awk -F , '{print $1}' | awk -F '//' '{print $2}' | grep -v '^$' | tail -n +2 | tee -a $listfile.tmp
+curl -s -k -L "$rooturl$documentid$exportcsv$sheetid01" | awk -F , '{print $1}' | awk -F : '{print $1}' | tail -n +2 | tee $listfile.tmp
+curl -s -k -L "$rooturl$documentid$exportcsv$sheetid02" | awk -F , '{print $1}' | awk -F : '{print $1}' | tail -n +2 | tee -a $listfile.tmp
+curl -s -k -L "$rooturl$documentid$exportcsv$sheetid03" | awk -F , '{print $1}' | tail -n +2 | tee -a $listfile.tmp
+curl -s -k -L "$rooturl$documentid$exportcsv$sheetid04" | awk -F , '{print $1}' | tail -n +2 | tee -a $listfile.tmp
+curl -s -k -L "$rooturl$documentid$exportcsv$sheetid05" | awk -F , '{print $1}' | awk -F '//' '{print $2}' | grep -v '^$' | tail -n +2 | tee -a $listfile.tmp
 
 #
 # Sort, uniq and write to listfile.
